@@ -4,6 +4,10 @@
 
 The Cool Districts Weather API provides weather information for cool districts, helping users find destinations with pleasant weather to travel to.
 
+## Performance Note
+**[N.B]** The initial response may take longer than 0.5 seconds due to the download time from the open-meteo API. Subsequent API calls return responses within 0.5 seconds.
+
+
 ## Getting Started
 
 ### Prerequisites
@@ -34,7 +38,7 @@ The Cool Districts Weather API provides weather information for cool districts, 
 
 ### Testing
 
-- Open your browser and navigate to [http://localhost:80](http://localhost:80) to test the API.
+- Open your browser and navigate to [http://localhost:80](http://localhost:80) to test the API. 
 
 ### API Documentation
 
