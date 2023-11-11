@@ -1,2 +1,4 @@
 .cache.sqlite
 api/notebook.ipynb
+api/services/__pycache__
+*/__pycache__
