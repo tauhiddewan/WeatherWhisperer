@@ -1,20 +1,18 @@
-# Cool Districts Weather API
+# WeatherWhisperer
 
 ## Overview
 
-The Cool Districts Weather API provides weather information for cool districts, helping users find destinations with pleasant weather to travel to.
+Welcome to WeatherWhisperer, your ultimate destination for weather information in cool districts worldwide! Our Cool Districts Weather API empowers users to explore destinations with delightful weather for their travel plans. Additionally, you can obtain temperature predictions for a specific date!
 
 ## Performance Note
-- The initial response may take longer than 0.5 seconds due to the download time from the open-meteo API. Subsequent API calls return responses within 0.5 seconds.
-- The XGboost library takes a while to download. 
-
-
+- Please note that the initial response may take longer than 0.5 seconds due to the download time from the open-meteo API. Subsequent API calls return responses within 0.5 seconds.
+- Additionally, be aware that the XGBoost library may take some time to download during the setup process.
 
 ## Getting Started
 
 ### Prerequisites
 
-- Docker: Ensure that Docker is installed on your machine. If not, you can download it [here](https://www.docker.com/get-started).
+Ensure that Docker is installed on your machine. If not, you can download it [here](https://www.docker.com/get-started).
 
 ### Installation
 
@@ -40,11 +38,14 @@ The Cool Districts Weather API provides weather information for cool districts, 
 
 - Open your browser and navigate to [http://localhost:80](http://localhost:80) to test the API.
 
+- Open your browser and navigate to [http://localhost:80](http://localhost:80) to test the API.
+
 - Successful response for getting the top 10 coolest district API should look like this : 
 ![Link: ](./repo_assets/top10Coolestdist.png)
 
 - Successful response for weather forecast of a given date should look like this : 
 ![Link: ](./repo_assets/forecastresponse.png)
+
 - Please use quotation marks and write the date in YYYY:MM:DD or DD:MM:YYYY format when giving input for weather forecast. 
 
 ### API Documentation
@@ -53,7 +54,7 @@ The Cool Districts Weather API provides weather information for cool districts, 
 
 ## Troubleshooting
 
-If you encounter any issues:
+If you encounter any issues, Try any one of the following:
 
 1. Prune Docker resources:
 
@@ -71,7 +72,7 @@ If you encounter any issues:
 
 ## Contributing
 
-If you would like to contribute to the development of Cool Districts Weather API, please follow these guidelines:
+If you would like to contribute to the development of the WeatherWhisperer API, please follow these guidelines:
 
 1. Fork the repository.
 2. Create a new branch for your feature: `git checkout -b feature-name`.
@@ -83,5 +84,4 @@ If you would like to contribute to the development of Cool Districts Weather API
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-
-Happy Traveling!
+Happy Traveling with WeatherWhisperer! 🌞🌍✈️
