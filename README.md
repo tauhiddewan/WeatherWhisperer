@@ -5,7 +5,9 @@
 The Cool Districts Weather API provides weather information for cool districts, helping users find destinations with pleasant weather to travel to.
 
 ## Performance Note
-**[N.B]** The initial response may take longer than 0.5 seconds due to the download time from the open-meteo API. Subsequent API calls return responses within 0.5 seconds.
+- The initial response may take longer than 0.5 seconds due to the download time from the open-meteo API. Subsequent API calls return responses within 0.5 seconds.
+- The XGboost library takes a while to download. 
+
 
 
 ## Getting Started
@@ -33,12 +35,16 @@ The Cool Districts Weather API provides weather information for cool districts, 
     ```bash
     docker run -p 80:80 coolapi:v0
     ```
-4. Successful response should look like this : 
-![Link: ](./response.png)
 
 ### Testing
 
-- Open your browser and navigate to [http://localhost:80](http://localhost:80) to test the API. 
+- Open your browser and navigate to [http://localhost:80](http://localhost:80) to test the API.
+
+- Successful response for getting the top 10 coolest district API should look like this : 
+![Link: ](./repo_assets/top10coolestdistresponse.png)
+
+- Successful response for weather forecast of a given date should look like this : 
+![Link: ](./repo_assets/top10coolestdistresponse.png)
 
 ### API Documentation
 
