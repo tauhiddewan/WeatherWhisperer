@@ -45,6 +45,7 @@ The Cool Districts Weather API provides weather information for cool districts, 
 
 - Successful response for weather forecast of a given date should look like this : 
 ![Link: ](./repo_assets/forecastresponse.png)
+- Please use quotation marks and write the date in YYYY:MM:DD or DD:MM:YYYY format when giving input for weather forecast. 
 
 ### API Documentation
 
