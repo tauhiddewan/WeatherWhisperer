@@ -41,10 +41,10 @@ The Cool Districts Weather API provides weather information for cool districts, 
 - Open your browser and navigate to [http://localhost:80](http://localhost:80) to test the API.
 
 - Successful response for getting the top 10 coolest district API should look like this : 
-![Link: ](./repo_assets/top10coolestdistresponse.png)
+![Link: ](./repo_assets/top10Coolestdist.png)
 
 - Successful response for weather forecast of a given date should look like this : 
-![Link: ](./repo_assets/top10coolestdistresponse.png)
+![Link: ](./repo_assets/forecastresponse.png)
 
 ### API Documentation
 
