@@ -1,6 +1,8 @@
 import time
+import json
 import pickle
 import pandas as pd
+from dateutil import parser
 from fastapi import FastAPI
 from api.services.download import get_district_datas, get_hourly_datas
 from api.services.process import get_10_coolest_districts
@@ -19,8 +21,12 @@ def get_coolest_10_districts():
     return result
 
 @app.post("/predict")
-def get_temp_forecast(date):
-    new_date = pd.to_datetime(date)
-    day_of_year = new_date.dayofyear
-    predicted_temperature = model.predict([day_of_year])[0]
-    return {"predicted_temp" : predicted_temperature}
+def get_temp_forecast(date: str):
+    try:
+        date_json = json.loads(date)
+        new_date = pd.to_datetime(date_json)
+        day_of_year = new_date.dayofyear
+        predicted_temperature = model.predict([day_of_year])[0]
+        return {"given_date": str(date_json), "predicted_temp": str(predicted_temperature)}
+    except:
+        return {"error": "Invalid JSON format for the date parameter. Please use quotation marks. Write the date in YYYY:MM:DD or DD:MM:YYYY format."}
