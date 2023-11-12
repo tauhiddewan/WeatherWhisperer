@@ -8,6 +8,12 @@ retry_session = retry(cache_session, retries = 5, backoff_factor = 0.2)
 openmeteo = openmeteo_requests.Client(session = retry_session)
 
 def get_dates():
+    """
+    Get the start and end dates for a seven-day forecast.
+
+    Returns:
+        Tuple[str, str]: A tuple containing the start date and end date in the format 'YYYY-MM-DD'.
+    """
     today = datetime.now()
     seventh_day = today + timedelta(days=6)
     startdate = today.strftime('%Y-%m-%d')
@@ -15,6 +21,12 @@ def get_dates():
     return startdate, enddate
 
 def get_district_datas():
+    """
+    Get district data including names, latitudes, and longitudes from an external JSON file.
+
+    Returns:
+        Tuple[List[str], List[float], List[float]]: A tuple containing lists of district names, latitudes, and longitudes.
+    """
     names, lats, longs = [], [], [] 
     district_datas = json.loads(requests.get("https://raw.githubusercontent.com/strativ-dev/technical-screening-test/main/bd-districts.json").text)["districts"]
     sorted_data = sorted(district_datas, key=lambda x: int(x['id']))
@@ -25,6 +37,17 @@ def get_district_datas():
     return names, lats, longs
 
 def get_hourly_datas(name_list, latitude_list, longitude_list):
+    """
+    Get hourly weather data for given districts.
+
+    Args:
+        name_list (List[str]): List of district names.
+        latitude_list (List[float]): List of district latitudes.
+        longitude_list (List[float]): List of district longitudes.
+
+    Returns:
+        List[Dict[str, Union[str, requests.Response]]]: A list of dictionaries containing district names and corresponding API responses.
+    """
     startdate, enddate = get_dates()
     url = "https://api.open-meteo.com/v1/forecast"
     params = {
